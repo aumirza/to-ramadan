@@ -7,6 +7,7 @@ import {
   ReactNode,
   useMemo,
 } from "react";
+import { toast } from "sonner";
 
 // Define the context type
 type LocationContextType = {
@@ -35,9 +36,12 @@ export function LocationProvider({ children }: { children: ReactNode }) {
 
   const fetchLocation = async () => {
     try {
+      toast.loading("Fetching location...", { duration: 1000 });
       const coords = await getLocation();
+      toast.dismiss();
       setLocation(coords);
     } catch (error) {
+      toast.error("Failed to fetch location");
       console.error("Error fetching location:", error);
     }
   };
