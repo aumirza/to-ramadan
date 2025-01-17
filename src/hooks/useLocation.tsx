@@ -6,6 +6,7 @@ import {
   useState,
   ReactNode,
   useMemo,
+  useCallback,
 } from "react";
 import { toast } from "sonner";
 
@@ -35,16 +36,27 @@ export function LocationProvider({ children }: { children: ReactNode }) {
   const [location, setLocation] = useState<GeolocationCoordinates>();
 
   const fetchLocation = async () => {
+    const storedLocation = localStorage.getItem("location");
+    if (storedLocation) {
+      setLocation(JSON.parse(storedLocation));
+      return;
+    }
     try {
       toast.loading("Fetching location...", { duration: 1000 });
       const coords = await getLocation();
       toast.dismiss();
       setLocation(coords);
+      localStorage.setItem("location", JSON.stringify(coords));
     } catch (error) {
       toast.error("Failed to fetch location");
       console.error("Error fetching location:", error);
     }
   };
+
+  const refreshLocation = useCallback(() => {
+    localStorage.removeItem("location");
+    fetchLocation();
+  }, []);
 
   useEffect(() => {
     fetchLocation();
@@ -55,9 +67,9 @@ export function LocationProvider({ children }: { children: ReactNode }) {
     () => ({
       location,
       setLocation,
-      refreshLocation: fetchLocation, // Expose fetchLocation to consumers
+      refreshLocation, // Expose fetchLocation to consumers
     }),
-    [location]
+    [location, refreshLocation]
   );
 
   return (
