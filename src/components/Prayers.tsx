@@ -40,21 +40,25 @@ function Prayers() {
   }, [ramadanDate]);
 
   return (
-    <div className="flex flex-col gap-5">
-      <div className="flex gap-10 flex-flex-wrap">
+    <div className="flex flex-col items-center gap-5">
+      <div className="flex flex-wrap justify-center gap-5 md:gap-10">
         {Object.keys(prayersInDay).map((prayer, index) => (
           <PrayerCard
             prayerTimes={prayerTimes}
             daysLeft={
-              daysLeft +
-              Number(
-                Boolean(
-                  prayersleftAfter[prayer as keyof typeof prayersleftAfter]
-                )
-              ) +
-              Number(
-                Boolean(prayersleftBefore[prayer as keyof typeof prayersInDay])
-              )
+              daysLeft
+                ? daysLeft +
+                  Number(
+                    Boolean(
+                      prayersleftAfter[prayer as keyof typeof prayersleftAfter]
+                    )
+                  ) +
+                  Number(
+                    Boolean(
+                      prayersleftBefore[prayer as keyof typeof prayersInDay]
+                    )
+                  )
+                : 0
             }
             prayer={prayer}
             key={index}
@@ -65,9 +69,11 @@ function Prayers() {
       <div className="text-xl">
         <span>Total Prayers:&nbsp;</span>
         <span>
-          {prayersList.length * daysLeft +
-            Object.keys(prayersleftAfter).length +
-            Object.keys(prayersleftBefore).length}
+          {daysLeft
+            ? prayersList.length * daysLeft +
+              Object.keys(prayersleftAfter).length +
+              Object.keys(prayersleftBefore).length
+            : 0}
         </span>
       </div>
     </div>
