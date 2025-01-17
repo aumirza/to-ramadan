@@ -9,3 +9,9 @@ interface IRakats {
   witr?: number;
   total: number;
 }
+
+interface IDua {
+  arabic: string;
+  transliteration: string;
+  translation: string;
+}

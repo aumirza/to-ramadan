@@ -1,17 +1,19 @@
-// import DuaCards from "./DuaCards";
+import DuaCards from "./DuaCards";
 import Header from "./Header";
 import Prayers from "./Prayers";
+import Rakats from "./Rakats";
 import { TimeTabs } from "./TimeTabs";
 import { Toaster } from "./ui/sonner";
 
 function App() {
   return (
-    <div className="flex flex-col gap-5 justify-center items-center w-full h-full min-h-screen">
+    <div className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-10">
       <Header />
-      <div className="flex flex-col gap-5 flex-grow justify-center items-center">
-        {/* <DuaCards /> */}
+      <div className="flex flex-col items-center justify-center flex-grow gap-10">
+        <DuaCards />
         <TimeTabs />
         <Prayers />
+        <Rakats />
       </div>
       <Toaster />
     </div>
