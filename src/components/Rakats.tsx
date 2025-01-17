@@ -35,27 +35,39 @@ function Rakats() {
   }, [ramadanDate]);
 
   return (
-    <div className="flex flex-col gap-5 p-10 bg-gray-200 rounded shadow">
-      <h2 className="text-2xl font-semibold">Prayers</h2>
+    <div className="flex flex-col w-full max-w-2xl gap-5 p-10 bg-gray-200 rounded shadow">
+      <h2 className="text-2xl font-semibold">Rakats</h2>
 
       <div className="text-lg">
         <div>
           <span> Total rakats: &nbsp;</span>
-          {totalRakatsInADay.total * daysLeft +
-            rakatsLeftAfter.total +
-            (rakatsLeftBefore?.total || 0)}
+          <span className="font-semibold">
+            {daysLeft
+              ? totalRakatsInADay.total * daysLeft +
+                rakatsLeftAfter.total +
+                (rakatsLeftBefore?.total || 0)
+              : 0}
+          </span>
         </div>
         <div className="">
           <span> Total obligatory rakats: &nbsp;</span>
-          {totalRakatsInADay.obligatory * daysLeft +
-            rakatsLeftAfter.obligatory +
-            (rakatsLeftBefore?.obligatory || 0)}
+          <span className="font-semibold">
+            {daysLeft
+              ? totalRakatsInADay.obligatory * daysLeft +
+                rakatsLeftAfter.obligatory +
+                (rakatsLeftBefore?.obligatory || 0)
+              : 0}
+          </span>
         </div>
         <div>
           <span> Total Sunnah rakats: &nbsp;</span>
-          {totalRakatsInADay.sunnah.total * daysLeft +
-            rakatsLeftAfter.sunnah.total +
-            (rakatsLeftBefore?.sunnah.total || 0)}
+          <span className="font-semibold">
+            {daysLeft
+              ? totalRakatsInADay.sunnah.total * daysLeft +
+                rakatsLeftAfter.sunnah.total +
+                (rakatsLeftBefore?.sunnah.total || 0)
+              : 0}
+          </span>
         </div>
       </div>
     </div>
