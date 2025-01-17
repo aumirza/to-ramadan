@@ -20,24 +20,26 @@ function DuaCards() {
     api.on("select", () => {
       setCurrentIndex(api.selectedScrollSnap() + 1);
     });
-    console.log(api);
   }, [api]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-11/12 max-w-6xl">
+    <div className="flex flex-col items-center justify-center max-w-6xl">
       <div className="text-xl">Keep your toungue moist with these duas.</div>
       <Carousel
         opts={{ loop: true, align: "center" }}
         setApi={setApi}
         plugins={[Autoplay()]}
+        className=" max-w-[100vw]"
       >
         <CarouselContent>
           {duas.map((dua) => (
             <CarouselItem key={dua.transliteration}>
-              <div className="flex flex-col items-center gap-2 p-4 my-4 bg-gray-100 rounded-lg">
-                <div className="text-2xl font-bold">{dua.arabic}</div>
+              <div className="flex flex-col items-center gap-2 p-4 my-4 bg-gray-100 rounded-lg text-wrap">
+                <div className="text-lg font-bold md:text-2xl">
+                  {dua.arabic}
+                </div>
                 <div className="text-sm">{dua.transliteration}</div>
-                <div className="text-lg">{dua.translation}</div>
+                <div className="md:text-lg">{dua.translation}</div>
               </div>
             </CarouselItem>
           ))}
