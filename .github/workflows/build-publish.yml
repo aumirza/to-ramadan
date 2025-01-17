@@ -37,7 +37,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          pnpm ci
+          pnpm install
           pnpm run build
 
       - name: Deploy 🚀
