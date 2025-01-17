@@ -9,7 +9,7 @@ const fajr: IRakats = {
   total: 4,
 };
 
-const zuhr: IRakats = {
+const dhuhr: IRakats = {
   sunnah: {
     muakkadah: 4,
     nonMuakkadah: 2,
@@ -52,7 +52,7 @@ const isha: IRakats = {
 
 export const prayersInDay = {
   fajr,
-  zuhr,
+  dhuhr,
   asr,
   maghrib,
   isha,
@@ -60,7 +60,7 @@ export const prayersInDay = {
 
 export const prayersleftAfter = {
   fajr,
-  zuhr,
+  dhuhr,
   asr,
 };
 
