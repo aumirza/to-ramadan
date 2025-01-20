@@ -29,13 +29,13 @@ function DuaCards() {
         opts={{ loop: true, align: "center" }}
         setApi={setApi}
         plugins={[Autoplay()]}
-        className=" max-w-[100vw]"
+        className="max-w-[90vw]"
       >
         <CarouselContent>
           {duas.map((dua) => (
             <CarouselItem key={dua.transliteration}>
-              <div className="flex flex-col items-center gap-2 p-4 my-4 bg-gray-100 rounded-lg text-wrap">
-                <div className="text-lg font-bold md:text-2xl">
+              <div className="flex flex-col items-center gap-2 p-4 my-4 text-center bg-gray-100 rounded-lg text-wrap">
+                <div className="text-xl font-bold md:text-2xl">
                   {dua.arabic}
                 </div>
                 <div className="text-sm">{dua.transliteration}</div>
