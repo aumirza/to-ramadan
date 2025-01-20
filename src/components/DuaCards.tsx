@@ -24,7 +24,7 @@ function DuaCards() {
 
   return (
     <div className="flex flex-col items-center justify-center max-w-5xl">
-      <h3 className="text-2xl font-bold">
+      <h3 className="text-xl font-bold text-center md:text-2xl">
         Keep your toungue moist with these duas.
       </h3>
       <Carousel
