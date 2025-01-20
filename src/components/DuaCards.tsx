@@ -23,8 +23,10 @@ function DuaCards() {
   }, [api]);
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-6xl">
-      <div className="text-xl">Keep your toungue moist with these duas.</div>
+    <div className="flex flex-col items-center justify-center max-w-5xl">
+      <h3 className="text-2xl font-bold">
+        Keep your toungue moist with these duas.
+      </h3>
       <Carousel
         opts={{ loop: true, align: "center" }}
         setApi={setApi}
