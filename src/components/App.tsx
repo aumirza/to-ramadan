@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import StayConnected from "./StayConnected";
 import HeroCard from "./HeroCard";
 import Permissions from "./Permissions";
+import Guidance from "./Guidance";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Prayers />
         <Rakats />
         <DuaCards />
+        <Guidance />
         <StayConnected />
       </main>
       <Toaster />
