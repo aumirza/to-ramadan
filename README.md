@@ -1,50 +1,90 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="public/to-ramadan-logo.png" alt="To Ramadan Logo" height="200" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# To Ramadan
 
-Currently, two official plugins are available:
+**Your journey to Ramadan made easy with a countdown, duas, and preparation tips.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌐 View Live
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[To Ramadan](https://to-ramadan.vercel.app/)
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ✨ Features
+
+- Countdown displaying remaining **days, hours, and minutes** until Ramadan.
+- Tracking of **remaining prayers** for the day.
+- Guidance on **Do's and Don'ts** for Ramadan preparation.
+
+---
+
+## 🛠️ Tech Stack
+
+- **[React](https://reactjs.org/)**: For building the user interface.
+- **[Vite](https://vitejs.dev/)**: For fast and efficient development builds.
+
+---
+
+## 📚 Lessons Learned
+
+- **Navigator API**: Used `navigator.location` to fetch the user's location for personalized timings.
+- **Caching Optimization**: Stored location data in **localStorage** to improve user experience and performance.
+
+---
+
+## 🚀 Optimizations
+
+- Utilized **localStorage** for caching user location data, reducing unnecessary API calls.
+- Added **memoization** for efficient Namaz time calculations, enhancing app responsiveness.
+
+---
+
+## 📄 Available Scripts
+
+```bash
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🤝 Contributing
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Contributions are welcome! Here's how you can contribute to the project:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Fork the Repository**: Click the "Fork" button on the top right of this repository's page.
+2. **Clone Your Fork**:
+   ```bash
+   git clone https://github.com/your-username/to-ramadan.git
+   cd to-ramadan
+   ```
+3. **Create a Branch:**
+   ```bash
+   git checkout -b feature-name
+   ```
+4. **Make Changes:** Add or improve features, fix bugs, or enhance documentation.
+5. **Commit Your Changes:**
+   ```bash
+   git commit -m "Add your descriptive message here"
+   ```
+6. Push Your Changes:
+
+   ```bash
+   git push origin feature-name
+   ```
+
+7. **Create a Pull Request:** Open a pull request to the main repository, describing your changes.
+
+## Guidelines
+
+- Ensure your code follows best practices and is well-documented.
+- Test your changes thoroughly before creating a pull request.
+- Respect the project's goals and code of conduct.
